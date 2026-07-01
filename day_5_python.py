@@ -86,7 +86,33 @@ full_stack.insert(full_stack.index('Redux')+1,'Python')
 full_stack.insert(full_stack.index('Python')+1,'SQL')
 print("Full stack after inserting Python and SQL:",full_stack)
 print("---------------------------------------------------")
-
-
-
+#List of 10 students ages
+ages=[19,22,19,24,20,25,26,24,25,24]
+#sort the list and find the min and max age
+ages.sort()
+print("Sorted ages:",ages)
+min_age=ages[0]
+max_age=ages[-1]
+print("Minimum age:",min_age)
+print("Maximum age:",max_age)
+#median age
+if len(ages)%2==0:
+    median_age=(ages[len(ages)//2-1]+ages[len(ages)//2])/2
+else:
+    median_age=ages[len(ages)//2]
+print("Median age:",median_age) 
+#average age
+average_age=sum(ages)/len(ages)
+print("Average age:",average_age)   
+#range of the ages
+age_range=max_age-min_age
+print("Range of ages:",age_range)
+#compare the value of (min - average) and (max - average), use abs() method
+min_avg_diff=abs(min_age-average_age)
+max_avg_diff=abs(max_age-average_age)
+print("Difference between minimum age and average age:",min_avg_diff)
+print("Difference between maximum age and average age:",max_avg_diff)
+print("---------------------------------------------------")
+#list of countries
+countries=['Finland', 'Sweden', 'Denmark', 'Norway', 'Iceland']
 
