@@ -67,3 +67,50 @@ elif month in ['March', 'April', 'May']:
 else:
     print("The season is Summer.")
 print("\n")
+
+#If a fruit doesn't exist in the list add the fruit to the list and print the modified list. If the fruit exists print('That fruit already exist in the list')
+fruits = ['banana', 'orange', 'mango', 'lemon']
+fruit_to_check = input("Enter a fruit to check: ").strip().lower() #normalize
+if fruit_to_check in fruits:
+    print("That fruit already exists in the list.")
+else:
+    fruits.append(fruit_to_check)
+    print("Modified list of fruits:", fruits)
+print("\n")
+#Modification of person dict
+person={
+     'first_name':'Asabeneh',
+     'last_name':'Yetahey',
+     'age': 25,
+     'country':'DRC',
+     'is_married':'False',
+     'skills':['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+     'address':{
+          'street': 'Space street',
+          'zipcode': '02210'
+     }
+
+}
+#check if the person dictionary has skills, if so print out the middle skill in the skills list
+if 'skills' in person:
+     skills=person['skills']
+     middle_index=len(skills)//2
+     print("Middle skill:", skills[middle_index])
+#2.Check if 'Python is in skills
+if 'skills' in person:
+     has_python='Python' in person['skills']
+     print("Has python Python skill:",has_python)
+#3.Determine developer type
+if 'skills' in person:
+     skills=person['skills']
+     if set(skills)=={'JavaScript','React'}:
+      print("He is a front end developer")    
+     elif {'Node','Python','MongoDB'}.issubset(skills):
+      print("He is a backend developer.")
+     elif {'React','Node','MongoDB'}.issubset(skills):
+      print("He is a fullstack developer")
+     else:
+       print("Unknown title")
+#5.Determine if the prson s married and the country they live in
+if person['is_married']and person['country']=='DRC':
+    print(f"{person['first_name']} {person['last_name']} lives in {person['country']}.")
