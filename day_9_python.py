@@ -1,4 +1,5 @@
-#prompting user for their age
+#Conditions
+# #prompting user for their age
 print("AGE CHECK:")
 age = int(input("Enter your age: "))
 if age >= 18:
