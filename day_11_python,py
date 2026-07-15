@@ -1,0 +1,54 @@
+#functions
+#declare a function (add_two_numbers).it takes parameters and it returns a sum
+def add_two_numbers(a, b):
+    return a + b
+#2.function(area_of_circle)
+import math
+def area_of_circle(r):
+    return math.pi*r*r
+#3. function(add_all_nums)
+def add_all_nums(*args):
+    total=0
+    for item in args:
+        if isinstance(item,(int,float)):
+            total +=item
+        else:
+            return f"Invalid input:'{item}' is not  number."
+        return total
+print(add_all_nums(2,5,10))
+print(add_all_nums(3,'Jamila',7))
+print("_____________________________________________________________")
+#4.A function converting celcius to fahrenheit
+def convert_celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+
+print(convert_celsius_to_fahrenheit(0))   # Output: 32.0
+print(convert_celsius_to_fahrenheit(25))  # Output: 77.0
+print("_____________________________________________________________")
+#5.A function to check-season
+def check_season(month):
+    month = month.lower()  # normalize input
+    if month in ['september', 'october', 'november']:
+        return "Autumn"
+    elif month in ['december', 'january', 'february']:
+        return "Winter"
+    elif month in ['march', 'april', 'may']:
+        return "Spring"
+    elif month in ['june', 'july', 'august']:
+        return "Summer"
+    else:
+        return "Invalid month"
+    
+print(check_season("March"))     # Output: Spring
+print(check_season("December"))  # Output: Winter
+print("_______________________________________________________________")
+#6.A function to return slope of a linear equation
+def calculate_slope(x1, y1, x2, y2):
+    if x1 == x2:
+        return "Slope is undefined (vertical line)."
+    return (y2 - y1) / (x2 - x1)
+
+print(calculate_slope(2, 4, 6, 10))   # Output: 1.5
+print(calculate_slope(3, 5, 3, 9))    # Output: Slope is undefined (vertical line).
+print("_______________________________________________________________")
