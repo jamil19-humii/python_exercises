@@ -185,4 +185,44 @@ def is_empty(param):
 print(is_empty([]))
 print(is_empty("Hello"))
 print("_______________________________________________________________________________")
+#19.function which take lists
+from collections import Counter
+import math
+  #mean
+def calculate_mean(data):
+    return sum(data)/len(data)
+  #median
+def calculate_median(data):
+    sorted_data=sorted(data)
+    n=len(sorted_data)
+    mid=n//2
+    if n%2 ==0:
+        return (sorted_data[mid-1])
+    else:
+        return sorted_data[mid]
+  #mode
+def calculate_mode(data):
+    counts=Counter(data)
+    max_count=max(counts.values())
+    modes=[k for k,v in counts.items() if v== max_count]
+    return modes if len(modes)>1 else modes[0]
+   #range
+def calculate_range(data):
+   return max(data)-min(data)
 
+def calculate_variance(data):
+    mean=calculate_mean(data)
+    return sum((x-mean)** 2 for x in data)/len(data)
+
+def calculate_std(data):
+    return math.sqrt(calculate_variance(data))
+
+numbers = [1, 2, 2, 3, 4, 5]
+
+print("Mean:", calculate_mean(numbers))        # 2.833...
+print("Median:", calculate_median(numbers))    # 2.5
+print("Mode:", calculate_mode(numbers))        # 2
+print("Range:", calculate_range(numbers))      # 4
+print("Variance:", calculate_variance(numbers))# 1.805...
+print("Std Dev:", calculate_std(numbers))      # 1.343...
+print("_______________________________________________________________________________")
