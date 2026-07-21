@@ -226,3 +226,22 @@ print("Range:", calculate_range(numbers))      # 4
 print("Variance:", calculate_variance(numbers))# 1.805...
 print("Std Dev:", calculate_std(numbers))      # 1.343...
 print("_______________________________________________________________________________")
+#20.)Function greet
+def greet(name="Guest"):
+    print(f"Hello,{name}!")
+greet()
+greet("Alice")
+print("_______________________________________________________________________________")
+#21.) Function show_args
+def show_args(**kwargs):
+    received = []
+    for key, value in kwargs.items():
+        received.append(f"{key}: {value}")
+    print("Received:", ", ".join(received))
+
+show_args(name="Alice", age=30, city="New York")
+# Received: name: Alice, age: 30, city: New York
+
+show_args(name="Bob", pet="Fluffy, the bunny")
+# Received: name: Bob, pet: Fluffy, the bunny
+print("_______________________________________________________________________________")
