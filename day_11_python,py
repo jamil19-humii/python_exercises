@@ -272,3 +272,27 @@ print(all_unique([1, 2, 3, 4]))       # True
 print(all_unique([1, 2, 2, 3, 4]))    # False
 print(all_unique(["apple", "banana"]))# True
 print("________________________________________________________________________________")
+
+#24.)Function checking if all items of the list are of the same data type
+def same_type(lst):
+    if not lst:  # handle empty list
+        return True
+    first_type = type(lst[0])
+    return all(isinstance(item, first_type) for item in lst)
+
+print(same_type([1, 2, 3]))          # True
+print(same_type(["a", "b", "c"]))    # True
+print(same_type([1, "two", 3]))      # False
+print(same_type([]))                 # True (empty list treated as consistent)
+print("______________________________________________________________________________________")
+
+#25.Function checking if provided variable is a valid python variable
+import keyword
+
+def is_valid_variable(var):
+    return var.isidentifier() and not keyword.iskeyword(var)
+print(is_valid_variable("my_var"))   # True
+print(is_valid_variable("2ndVar"))   # False (cannot start with digit)
+print(is_valid_variable("for"))      # False (reserved keyword)
+print(is_valid_variable("_hidden"))  # True
+print("______________________________________________________________________________________")
